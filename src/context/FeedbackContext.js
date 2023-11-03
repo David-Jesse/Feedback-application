@@ -38,7 +38,14 @@ export const FeedbackProvider = ({children}) => {
       }
     
 
-    // Deletes feedback    
+    // Function that Updates Feedbackitem
+    const updateFeedback = (id, updItem) => {
+        setFeedback(feedback.map((item) => item.id === id ? {
+            ...item, ...updItem
+        } : item))
+    }
+
+    // Function Deletes feedback    
     const deleteFeedback = (id) => {
         if(window.confirm('Are you sure about this action?')){
         setFeedback(feedback.filter((item) => item.id !== id))
@@ -59,7 +66,7 @@ export const FeedbackProvider = ({children}) => {
         deleteFeedback,
         addFeedback,
         editFeedback,
-
+        updateFeedback,
     }}
     >
         {children}
