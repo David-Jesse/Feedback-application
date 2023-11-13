@@ -10,8 +10,7 @@ function Header({text, bgColor, textColor}) {
     <header style={headerStyles}>
         <div className="container">
             <h2>{text}</h2>
-        </div>
-        
+        </div>  
     </header>
   )
 }
